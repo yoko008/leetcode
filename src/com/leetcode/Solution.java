@@ -110,6 +110,32 @@ public class Solution {
         }
         return lists;
     }
+
+    /**
+     * 169. 求众数
+     * @param nums
+     * @return
+     */
+    public int majorityElement(int[] nums) {
+        Arrays.sort(nums);
+        int num = 1;
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i+1; j < nums.length; j++) {
+                if (nums[i]==nums[j]){
+                    num++;
+                }
+                else {
+                    if (num > nums.length/2){
+                        return nums[i];
+                    }
+                    i = j-1;
+                    num = 1;
+                    break;
+                }
+            }
+        }
+        return nums[nums.length-1];
+    }
     /**
      * 171. Excel表列序号
      * @param s
@@ -148,15 +174,17 @@ public class Solution {
      * @param nums
      */
     public void moveZeroes(int[] nums) {
-        for (int i = 0; i < nums.length; i++) {
-            if (i == 0) {
+        nums = new int[]{0,0,1};
+        for (int i = nums.length-1; i >= 0; i--) {
+            if (nums[i] == 0) {
                 for (int j = i; j < nums.length-1; j++) {
                     int a = nums[j];
                     nums[j] = nums[j+1];
-                    nums[j+1] = nums[j];
+                    nums[j+1] = a;
                 }
             }
         }
+        System.out.println(Arrays.toString(nums));
     }
     /**
      * 292. Nim游戏

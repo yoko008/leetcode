@@ -8,13 +8,13 @@ public class Main {
         int num = 0;
         int num2 = 0;
         String str = "";
-        int[] intArr = new int[]{1,1,2,3,4,3,4};
+        int[] intArr = new int[]{-1,1,1,1,2,1};
         int[] intArr2 = new int[]{};
         String[] stringArr = new String[]{};
         String[] stringArr2 = new String[]{};
         int[][] intArrArr = new int[][]{{0,0,1,0,0,0,0,1,0,0,0,0,0},{0,0,0,0,0,0,0,1,1,1,0,0,0},{0,1,1,0,1,0,0,0,0,0,0,0,0},{0,1,0,0,1,1,0,0,1,0,1,0,0},{0,1,0,0,1,1,0,0,1,1,1,0,0},{0,0,0,0,0,0,0,0,0,0,1,0,0},{0,0,0,0,0,0,0,1,1,1,0,0,0},{0,0,0,0,0,0,0,1,1,0,0,0,0}};
         long l = System.currentTimeMillis();
-        printArr(new Solution().maxAreaOfIsland(intArrArr));
+        printArr(new Solution().majorityElement(intArr));
         System.out.print("用时="+(System.currentTimeMillis()-l)+"ms");
 
     }
