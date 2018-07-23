@@ -152,6 +152,36 @@ public class Solution {
     }
 
     /**
+     * 204. 计数质数
+     * @param n
+     * @return
+     */
+    public int countPrimes(int n) {
+        int num = 0;
+        if (n<2){
+            return 0;
+        }
+        boolean[] a = new boolean[n];
+        for (int i = 0; i < a.length ; i++) {
+            a[i] = true;
+        }
+        a[0] = false;
+        a[1] = false;
+        for (int i = 2; i < n; i++) {
+            if (a[i]){
+                for (int j = i*2; j < n; j = j+i) {
+                    a[j] = false;
+                }
+            }
+        }
+        for (int i = 0; i < n; i++) {
+            if (a[i]){
+                num++;
+            }
+        }
+        return num;
+    }
+    /**
      * 258. 各位相加
      * @param num
      * @return
@@ -712,6 +742,23 @@ public class Solution {
             list.add(entry.getValue()+" "+entry.getKey());
         }
         return list;
+    }
+
+    /**
+     * 812. 最大三角形面积
+     * @param points
+     * @return
+     */
+    public double largestTriangleArea(int[][] points) {
+        double area = 0;
+        for (int[] a : points) {
+            for (int[] b : points) {
+                for (int[] c : points) {
+                    area = Math.max(area, 0.5 * Math.abs(a[0] * b[1] + b[0] * c[1] + c[0] * a[1] - a[0] * c[1] - b[0] * a[1] - c[0] * b[1]));
+                }
+            }
+        }
+        return area;
     }
     /**
      * 821. 字符的最短距离

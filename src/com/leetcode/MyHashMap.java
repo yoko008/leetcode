@@ -1,5 +1,8 @@
 package com.leetcode;
 
+/**
+ * 706.设计哈希映射
+ */
 public class MyHashMap {
 
     private int[] map;

@@ -15,12 +15,7 @@ public class Main {
         String[] stringArr2 = new String[]{};
         int[][] intArrArr = new int[][]{{0,0,1,0,0,0,0,1,0,0,0,0,0},{0,0,0,0,0,0,0,1,1,1,0,0,0},{0,1,1,0,1,0,0,0,0,0,0,0,0},{0,1,0,0,1,1,0,0,1,0,1,0,0},{0,1,0,0,1,1,0,0,1,1,1,0,0},{0,0,0,0,0,0,0,0,0,0,1,0,0},{0,0,0,0,0,0,0,1,1,1,0,0,0},{0,0,0,0,0,0,0,1,1,0,0,0,0}};
         long l = System.currentTimeMillis();
-        //printArr(new Solution().majorityElement(intArr));
-        MyHashMap map = new MyHashMap();
-        map.put(1,1);
-        System.out.println(map.get(2));
-        map.remove(1);
-        System.out.println(map.get(1));
+        printArr(new Solution().countPrimes(100));
         System.out.print("用时="+(System.currentTimeMillis()-l)+"ms");
 
     }
