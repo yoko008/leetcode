@@ -45,6 +45,25 @@ public class Solution {
     }
 
     /**
+     * 27. 移除元素
+     * @param nums
+     * @param val
+     * @return
+     */
+    public int removeElement(int[] nums, int val) {
+        int num = nums.length;
+        for (int i = 0; i < num; i++) {
+            if (nums[i]==val){
+                for (int j = i; j < num-1; j++) {
+                    nums[j]=nums[j+1];
+                }
+                num--;
+                i--;
+            }
+        }
+        return num;
+    }
+    /**
      * 119. 杨辉三角 II
      * @param rowIndex
      * @return
@@ -181,6 +200,56 @@ public class Solution {
         }
         return num;
     }
+
+    /**
+     * 217. 存在重复元素
+     * @param nums
+     * @return
+     */
+    public boolean containsDuplicate(int[] nums) {
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i+1; j < nums.length; j++) {
+                if (nums[i] == nums[j]){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    /**
+     * 219. 存在重复元素 II
+     * @param nums
+     * @param k
+     * @return
+     */
+    public boolean containsNearbyDuplicate(int[] nums, int k) {
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i+1; j < nums.length; j++) {
+                if (nums[i] == nums[j]&&j-i<=k){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    /**
+     * 220. 存在重复元素 III
+     * @param nums
+     * @param k
+     * @param t
+     * @return
+     */
+    public boolean containsNearbyAlmostDuplicate(int[] nums, int k, int t) {
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i+1; j < nums.length; j++) {
+                if ((long)nums[i] - (long)nums[j] <= t && (long)nums[i] - (long)nums[j] >= -t && j - i <= k){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
     /**
      * 258. 各位相加
      * @param num
@@ -250,6 +319,22 @@ public class Solution {
         return Integer.parseInt(c1.toString());
     }
 
+    /**
+     * 389. 找不同
+     * @param s
+     * @param t
+     * @return
+     */
+    public char findTheDifference(String s, String t) {
+        char num = 0;
+        for (char schar: s.toCharArray()) {
+            num -= schar;
+        }
+        for (char tchar: t.toCharArray()) {
+            num += tchar;
+        }
+        return num;
+    }
     /**
      * 412. Fizz Buzz
      * @param n
@@ -321,6 +406,26 @@ public class Solution {
             n++;
         }
         return c;
+    }
+
+    /**
+     * 485. 最大连续1的个数
+     * @param nums
+     * @return
+     */
+    public int findMaxConsecutiveOnes(int[] nums) {
+        int x = 0;
+        int returnnum = 0;
+        for (int num:nums) {
+            if (num==1){
+                x++;
+                returnnum = Math.max(x,returnnum);
+            }
+            else{
+                x = 0;
+            }
+        }
+        return returnnum;
     }
 
     /**

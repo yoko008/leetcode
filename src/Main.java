@@ -9,15 +9,14 @@ public class Main {
         int num = 0;
         int num2 = 0;
         String str = "";
-        int[] intArr = new int[]{-1,1,1,1,2,1};
+        int[] intArr = new int[]{2,3,3,2};
         int[] intArr2 = new int[]{};
         String[] stringArr = new String[]{};
         String[] stringArr2 = new String[]{};
         int[][] intArrArr = new int[][]{{0,0,1,0,0,0,0,1,0,0,0,0,0},{0,0,0,0,0,0,0,1,1,1,0,0,0},{0,1,1,0,1,0,0,0,0,0,0,0,0},{0,1,0,0,1,1,0,0,1,0,1,0,0},{0,1,0,0,1,1,0,0,1,1,1,0,0},{0,0,0,0,0,0,0,0,0,0,1,0,0},{0,0,0,0,0,0,0,1,1,1,0,0,0},{0,0,0,0,0,0,0,1,1,0,0,0,0}};
         long l = System.currentTimeMillis();
-        printArr(new Solution().countPrimes(100));
+        printArr(new Solution().removeElement(intArr,2));
         System.out.print("用时="+(System.currentTimeMillis()-l)+"ms");
-
     }
 
     public static void printArr(String[] arr){
@@ -40,6 +39,7 @@ public class Main {
     public static void printArr(int num){
         System.out.println("int="+num);
     }
+    public static void printArr(char ch){System.out.println("char="+ch);}
     public static void printArr(boolean tf){
         System.out.println("boolean="+tf);
     }
