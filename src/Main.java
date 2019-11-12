@@ -22,7 +22,10 @@ public class Main {
         //System.out.println(new Solution().oddCells(2,2,new int[][]{{1,1},{0,0}}));
 //        System.out.println(new Solution().reconstructMatrix(9,2,new int[]{0,1,2,0,0,0,0,0,0,2,1,2,1,2}));
 //        System.out.println(new _7_ReverseInteger().reverse(-2100000009));
-        System.out.println(new _8_StringtoIntegerAtoi().myAtoi("   +"));
+//        System.out.println(new _8_StringtoIntegerAtoi().myAtoi("   +"));
+//        System.out.println(new _12_IntegerToRoman().intToRoman(3999));
+//        System.out.println(new _14_LongestCommonPrefix().longestCommonPrefix(new String[]{""}));
+        System.out.println(new _20_ValidParentheses().isValid(""));
         System.out.println("用时=" + (System.currentTimeMillis() - l) + "ms");
     }
 
