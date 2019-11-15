@@ -1,5 +1,5 @@
 import com.definition.*;
-import com.leetcode.*;
+import com.leetcode.problem_1_500._11_ContainerWithMostWater;
 
 import java.util.Arrays;
 import java.util.List;
