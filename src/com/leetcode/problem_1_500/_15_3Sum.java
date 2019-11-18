@@ -24,6 +24,43 @@ import java.util.*;
 */
 public class _15_3Sum {
     public List<List<Integer>> threeSum(int[] nums) {
-        
+        if (nums.length < 3) {
+            return new ArrayList<>();
+        }
+        Arrays.sort(nums);
+        List<List<Integer>> list = new LinkedList();
+        for (int i = 0; i < nums.length - 2; i++) {
+            if (i > 0 && nums[i] == nums[i - 1]) {
+                continue;
+            }
+            if (nums[i] > 0) {
+                break;
+            }
+            int L = i + 1;
+            int R = nums.length - 1;
+            while (L < R) {
+                if (nums[i] + nums[L] + nums[R] == 0) {
+                    List l = new LinkedList();
+                    l.add(nums[i]);
+                    l.add(nums[L]);
+                    l.add(nums[R]);
+                    list.add(l);
+
+                    while (L < R && nums[L] == nums[L + 1]) {
+                        L++;
+                    }
+                    while (L < R && nums[R] == nums[R - 1]) {
+                        R--;
+                    }
+                    L++;
+                    R--;
+                } else if (nums[i] + nums[L] + nums[R] > 0) {
+                    R--;
+                } else {
+                    L++;
+                }
+            }
+        }
+        return list;
     }
 }
